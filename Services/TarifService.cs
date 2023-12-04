@@ -32,19 +32,27 @@ public class TarifService {
         return dataResponse;
     }
 
-    public DetailTarifResponse getByName(long kd_tarif) {
+    public object getByName(long kd_tarif, long harga) {
         
         var tarif = repositoryTarif.FirstOrDefault(n => n.kd_tarif == kd_tarif);
     
         if (tarif == null) { //jika tidak ada didatabase maka return null
             return null;
         }
-    
-        var response = new DetailTarifResponse() {
-            kd_tarif = tarif.kd_tarif,
-            tarif_bm= tarif.tarif_bm,
-        };
 
-        return response;
+        if (harga != null) {
+            var response = new HargaTarifResponse() {
+                kd_tarif = tarif.kd_tarif,
+                tarif_bm = tarif.tarif_bm,
+                total_tarif_bm = tarif.tarif_bm * harga
+            };
+            return response;
+        } else {
+            var response = new DetailTarifResponse() {
+                kd_tarif = tarif.kd_tarif,
+                tarif_bm= tarif.tarif_bm
+            };
+            return response;
+        }
     }
 }

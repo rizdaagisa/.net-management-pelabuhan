@@ -55,7 +55,7 @@ public class TransactionService {
                         kd_tarif = tr.kd_tarif,
                         tarif_bm = tr.tarif_bm,
                     })
-                    .FirstOrDefault(),
+                    .FirstOrDefault(),  
                 harga = t.harga,
                 total_harga_bm = (repositoryTarif.FirstOrDefault(tr => tr.kd_tarif == t.kd_tarif).tarif_bm) * t.harga 
             })
