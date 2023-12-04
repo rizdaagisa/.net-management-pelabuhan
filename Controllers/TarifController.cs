@@ -8,10 +8,9 @@ namespace ILCS_restfulAPI.Controllers;
 public class TarifController : ControllerBase{
     private readonly TarifService tarifService;
 
-    public TarifController(TarifService tarifServices)
-    {
+    public TarifController(TarifService tarifServices) {
         this.tarifService = tarifServices;
-    }
+    } 
     
     [HttpGet("all")]
     public IActionResult Index() {

@@ -17,6 +17,7 @@ builder.Services.AddScoped<TarifService>();
 builder.Services.AddScoped<BarangService>();
 builder.Services.AddScoped<NegaraService>();
 builder.Services.AddScoped<PelabuhanService>();
+builder.Services.AddScoped<TransactionService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

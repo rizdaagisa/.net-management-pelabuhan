@@ -1,7 +1,8 @@
 ﻿before use this application need to install `.net 8` , After you clone this project run this command on terminal
 ```
- dotnet restore
+ dotnet restore    # -> for install all dependencies
  dotnet build
+ dotnet ef migrations add test-migration    # --> for database migration
  dotnet run
 ```
 
